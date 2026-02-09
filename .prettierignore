@@ -1,0 +1,5 @@
+# ignore les fichiers markdown
+
+**/*.md
+**/*.yml
+**/*.yaml
