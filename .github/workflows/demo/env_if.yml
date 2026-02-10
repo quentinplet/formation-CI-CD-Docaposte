@@ -13,7 +13,6 @@ jobs:
         if: ${{ env.NAME != 'Quentin'}}
         run: echo "Salut mais qui es-tu ? tu n'es pas $NAME ?! Oo!"
 
-      - name: "Hello François (steps)"
-
+      - name: "Hello Quentin (steps)"
         if: ${{ env.NAME == 'Quentin'}}
         run: echo "Salut $NAME ! Force et Honneur !"

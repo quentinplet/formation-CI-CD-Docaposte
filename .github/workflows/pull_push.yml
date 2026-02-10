@@ -1,0 +1,22 @@
+name: Push or Pull
+on: [push, pull_request]
+
+env:
+  MESSAGE_PUSH: "C'est un push !"
+  MESSAGE_PULL: "C'est une pull request !"
+
+jobs:
+  say-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Dit push"
+        if: github.event_name == 'push'
+        run: echo "$MESSAGE_PUSH"
+    
+  say-pull:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Dit pull request"
+        if: github.event_name == 'pull_request'
+        run: echo "$MESSAGE_PULL"
