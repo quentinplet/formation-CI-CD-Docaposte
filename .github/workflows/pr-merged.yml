@@ -1,0 +1,17 @@
+name: Workflow de merge
+on:
+  pull_request:
+    types: [closed]
+    
+jobs:
+  message-apres-merge:
+    runs-on: ubuntu-latest
+    if: ${{github.event.pull_request.merged == true}}
+    steps:
+      - name: "Afficher message de confirmation"
+        run: |
+          echo "✅ La PR #${{ github.event.pull_request.number }} a été mergée avec succès !"
+          echo "Titre: ${{ github.event.pull_request.title }}"
+          echo "Auteur: ${{ github.event.pull_request.user.login }}"
+          echo "Branche source: ${{ github.event.pull_request.head.ref }}"
+          echo "Branche cible: ${{ github.event.pull_request.base.ref }}"
