@@ -1,0 +1,23 @@
+name: workflow_liees
+on:
+  workflow_dispatch
+
+jobs:
+  premier-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Message du premier job
+        run: |
+          echo "🚀 Premier job lancé manuellement !"
+          echo "Démarrage du workflow à $(date)"
+          echo "Déclenché par: ${{ github.actor }}"
+
+  deuxieme-job:
+    runs-on: ubuntu-latest
+    needs: [premier-job]
+    steps:
+      - name: Message du deuxième job
+        run: |
+          echo "✅ Deuxième job lancé après le premier !"
+          echo "Le premier job s'est terminé à $(date)"
+          echo "Ce workflow est un exemple de jobs liés entre eux."
