@@ -1,0 +1,16 @@
+name: workflow_suivant
+on:
+  workflow_run:
+    workflows: [workflow_merge]
+    types: [completed]
+
+jobs:
+  message-apres-workflow-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Afficher message après workflow_merge"
+        run: |
+          echo "✅ Le workflow suivant workflow_merge a été complété avec succès !"
+          echo "Nom du workflow: ${{ github.event.workflow_run.name }}"
+          echo "ID du workflow: ${{ github.event.workflow_run.id }}"
+          echo "URL du workflow: ${{ github.event.workflow_run.html_url }}"

@@ -1,8 +1,8 @@
-name: Workflow de merge
+name: workflow_merge
 on:
   pull_request:
     types: [closed]
-    
+
 jobs:
   message-apres-merge:
     runs-on: ubuntu-latest
