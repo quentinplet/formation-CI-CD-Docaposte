@@ -1,4 +1,4 @@
 # formation-CI-CD-Docaposte
 
 Ce message n'est présent que sur la branch test-PR
-Autre messsage pour tester les PR
+Autre message pour tester les PR
