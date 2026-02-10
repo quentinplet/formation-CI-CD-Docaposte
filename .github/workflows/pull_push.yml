@@ -8,15 +8,14 @@ env:
 jobs:
   say-push:
     runs-on: ubuntu-latest
+    if: ${{github.event_name == 'push' }}
     steps:
       - name: "Dit push"
-        if: github.event_name == 'push'
         run: echo "$MESSAGE_PUSH"
     
   say-pull:
     runs-on: ubuntu-latest
-
+    if: ${{github.event_name == 'pull_request' }}
     steps:
       - name: "Dit pull request"
-        if: github.event_name == 'pull_request'
         run: echo "$MESSAGE_PULL"
