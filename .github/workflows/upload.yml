@@ -1,0 +1,15 @@
+name: upload artifact
+
+on: workflow_dispatch
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create file
+        run: echo "Coucou" > artifact.txt
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifact
+          path: artifact.txt
